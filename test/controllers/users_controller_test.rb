@@ -29,4 +29,17 @@ class UsersControllerTest < ActionController::TestCase
     }
     assert_equal "Welcome to our app!", flash[:success]
   end
+  test "Unsuccessful sign up" do
+        post :create, params: {
+      user:{ 
+        username:"",
+        email: "validemail@gmail.com",
+        password: "foobar",
+        password_confirmation: "foobar" 
+      }
+    }
+ 
+  assert_template 'new'
+  end
 end
+
