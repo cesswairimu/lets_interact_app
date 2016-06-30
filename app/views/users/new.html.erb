@@ -1,6 +1,16 @@
 <%= form_for(@user) do |f|%>
+    <%#= render 'shared/error_messages' %>
+<div id ="error_messages">
+<% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |msg| %>
+        <ul>
+            <li><%= msg %></li>
+        </ul>
+    <% end %>
+<% end %>
+</div>
     <%= f.label :username %>
-    <%= f.text_field :username %><br><br>
+    <%= f.text_field :username %><br><b:r>
 
     <%= f.label :email %>
     <%= f.email_field :email %><br><br>

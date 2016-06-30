@@ -6,7 +6,7 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "redirect to root url" do
+  test "redirect to  user profile" do
     post :create, params: {
       user:{ 
         username: "valid",
@@ -15,7 +15,7 @@ class UsersControllerTest < ActionController::TestCase
         password_confirmation: "foobar" 
       }
     }
-    assert_redirected_to root_url
+    assert_redirected_to User.last
   end
   
   test "successful sign up" do
