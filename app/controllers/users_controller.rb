@@ -18,7 +18,8 @@ class UsersController < ApplicationController
   end
 
   def index
-@users = User.order(params[:sort])
+  
+  @users = User.order(params[:sort])
   end
   private
     def user_params 

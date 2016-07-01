@@ -10,7 +10,7 @@
     </thead>
     <% @users.each do |user| %>
         <tr>
-            <td><%= user.order(:username)  %></td>
+            <td><%= user.username %></td>
             <td><%= user.email %></td>
             <td><%= "#{time_ago_in_words(user.created_at)} ago" %></td>
         </tr>
