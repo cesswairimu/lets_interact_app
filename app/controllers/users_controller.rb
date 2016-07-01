@@ -18,9 +18,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+@users = User.order(params[:sort])
   end
-
   private
     def user_params 
       params.require(:user).permit(:username, :email, :password,
